@@ -1,0 +1,16 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.kotlin
+
+.idea/
+*.iws
+*.iml
+*.ipr
+*.class
+.DS_Store
+
+uploaded_files/
+*.log
+.env

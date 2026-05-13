@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="indexer" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>indexer.Entities.Document</class>
+        <class>indexer.Entities.Word</class>
+        <class>indexer.Entities.WordFrequency</class>
+        <properties>
+            <!-- Подключение к PostgreSQL -->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/indexer_db"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="postgre"/>
+
+            <!-- Генерация схемы -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <!-- Логирование и оптимизация батчей -->
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.jdbc.batch_size" value="100"/>
+            <property name="hibernate.order_inserts" value="true"/>
+            <property name="hibernate.order_updates" value="true"/>
+            <property name="hibernate.jdbc.batch_versioned_data" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
